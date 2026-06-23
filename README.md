@@ -1,7 +1,7 @@
 # Duk Creek
 
 <p align="center">
-  <img width="100" height="80" alt="Duk Creek Logo" src="https://github.com/user-attachments/assets/3a913605-acb5-48f7-ade5-4ab3302a40f2" />
+  <img width="100" height="80" alt="Duk Creek Logo" src="https://github.com/user-attachments/assets/51d4f2f9-9cc5-47a0-bd25-75611e9a4194" />
 </p>
 
 **Duk Creek** is a utility that converts **Ducky Script** payloads into **Evil Crow Cable Wind** compatible payloads.
@@ -52,6 +52,5 @@ This project is intended for educational purposes, authorized security testing, 
 MIT License
 
 ## Converter
-
-[dukCreek.webm](https://github.com/user-attachments/assets/d61b434a-8aa0-498a-805a-a813eff5462b)
+[converter.webm](https://github.com/user-attachments/assets/f86735d6-d36c-4eb6-9802-c43eab30dc51)
 
