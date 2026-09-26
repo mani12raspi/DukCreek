@@ -1,27 +1,70 @@
-# Duk Creek
+# DukCreek
 
-<p align="center">
-  <img width="100" height="80" alt="Duk Creek Logo" src="https://github.com/user-attachments/assets/51d4f2f9-9cc5-47a0-bd25-75611e9a4194" />
-</p>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/status-active-brightgreen.svg)](#)
+[![Platform](https://img.shields.io/badge/platform-web-blue.svg)](https://mani12raspi.github.io/DukCreek/)
 
-**Duk Creek** is a utility that converts **Ducky Script** payloads into **Evil Crow Cable Wind** compatible payloads.
-
-## Converter - DuckyScript to EvilCrow Cable Wind
 <p align="left">
-  <a href="https://mani12raspi.github.io/DukCreek/">DukCreek Converter Page Link</a>
+<img width="180" height="150" alt="image" src="https://github.com/user-attachments/assets/e909e281-d4f2-413d-8def-287f6653b241" />
 </p>
+
+**DukCreek** is a utility that converts **Ducky Script** payloads into **Evil Crow Cable Wind** compatible payloads — no manual rewriting required.
+
+> ⚠️ **Disclaimer:** This project is intended for educational purposes, authorized security testing, and research only. Users are responsible for complying with all applicable laws and obtaining proper authorization before using generated payloads.
+
+## Built For
+
+This converter targets the **[Evil Crow Cable Wind](https://github.com/joelsernamoreno/EvilCrowCable-Wind)** — a BadUSB device created by [Joel Serna Moreno](https://github.com/joelsernamoreno) ([@JoelSernaMoreno](https://x.com/JoelSernaMoreno)), based on the ESP32-S3.
+
+DukCreek is an independent, unofficial companion tool and is not affiliated with or endorsed by the Evil Crow Cable Wind project. For the device's firmware, payload syntax reference, hardware purchase links, and setup instructions, see the [official Evil Crow Cable Wind repository](https://github.com/joelsernamoreno/EvilCrowCable-Wind).
+
+---
+
+## Table of Contents
+
+- [Live Converter](#live-converter)
+- [Demo](#demo)
+- [Features](#features)
+- [Why DukCreek?](#why-dukcreek)
+- [Getting Started](#getting-started)
+- [Example](#example)
+- [Supported Commands](#supported-commands)
+- [Known Limitations](#known-limitations)
+- [License](#license)
+
+---
+
+## Live Converter
+
+Use the hosted converter directly in your browser — no install needed:
+
+**[→ Open the DukCreek Converter](https://mani12raspi.github.io/DukCreek/)**
+
+## Demo
+
+https://github.com/user-attachments/assets/a3bd59d3-351d-4c33-ad94-c3898ce46e35
 
 ## Features
 
-- Convert standard Ducky Script commands
-- Generate Evil Crow Cable Wind payloads automatically
-- Simplify payload migration between platforms
-- Lightweight and easy to use
+- 🔄 Converts standard Ducky Script commands to Evil Crow Cable Wind syntax
+- ⚡ Instant, in-browser conversion — no dependencies to install
+- 🪶 Lightweight, single-page tool
+- 🧩 Simplifies payload migration between Rubber Ducky and Evil Crow Wind Cable hardware
 
-### Example
+## Why DukCreek?
+
+Many existing payloads are written in Ducky Script for USB Rubber Ducky devices. Evil Crow Cable Wind uses its own, different command syntax. Rewriting payloads by hand is tedious and error-prone — DukCreek automates that translation so you can reuse your existing script library.
+
+## Getting Started
+
+### Use it online
+Just open the [hosted converter](https://mani12raspi.github.io/DukCreek/), paste your Ducky Script, and copy the converted output.
+
+No build step or server is required — the converter runs entirely client-side.
+
+## Example
 
 **Input (Ducky Script):**
-
 ```text
 REM Open Notepad and type Hello World (Windows - DuckyScript)
 DEFAULTDELAY 150
@@ -35,7 +78,6 @@ ENTER
 ```
 
 **Output (Evil Crow Wind):**
-
 ```text
 RunWin notepad
 Delay 150
@@ -44,18 +86,25 @@ PrintLine Hello World!
 Delay 150
 ```
 
-## Why Duk Creek?
+## Supported Commands
 
-Many payloads are written for USB Rubber Ducky devices using Ducky Script. Duk Creek helps translate those payloads for use with Evil Crow Wind Cable devices, reducing manual conversion work.
+| Ducky Script      | Evil Crow Wind Equivalent | Notes                          |
+|-------------------|---------------------------|---------------------------------|
+| `GUI r`            | `RunWin`                  | Windows Run dialog              |
+| `STRING`           | `PrintLine`               | Text entry                      |
+| `DELAY`            | `Delay`                   | Millisecond delay               |
+| `DEFAULTDELAY`     | *(applied per-command)*   | Converted into explicit delays  |
+| `ENTER`            | *(implicit in `PrintLine`)* | Line break handled automatically |
 
-## Disclaimer
+> 📋 *For the complete list of Evil Crow Wind commands (e.g. `Press`, `PressRelease`, `RunPowershellAdmin`, `ShellWin`), see the [Payload Syntax reference](https://github.com/joelsernamoreno/EvilCrowCable-Wind#payload-syntax) in the official repo. Fill in this table as DukCreek's coverage grows.*
 
-This project is intended for educational purposes, authorized security testing, and research only. Users are responsible for complying with all applicable laws and obtaining proper authorization before using generated payloads.
+## Known Limitations
+
+- Commands not listed above are currently unsupported and will be skipped/ignored during conversion *(update this based on actual converter behavior)*.
+- No CLI or batch-file conversion yet — one script at a time via the web UI.
 
 ## License
 
-MIT License
+Released under the [MIT License](LICENSE).
 
-## Converter
-[converter.webm](https://github.com/user-attachments/assets/f86735d6-d36c-4eb6-9802-c43eab30dc51)
-
+Evil Crow Cable Wind itself is licensed separately by its author under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) — that license applies to the hardware/firmware project, not to DukCreek.
